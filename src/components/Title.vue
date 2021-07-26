@@ -64,6 +64,7 @@ export default defineComponent({
   flex: 1;
   background-color: rgba(var(--fg-color), 0.1);
   max-height: 150px;
+  transition: background-color 300ms;
 }
 .links > * {
   justify-content: center;
@@ -86,7 +87,7 @@ export default defineComponent({
   width: 20px;
   height: 20px;
   align-self: center;
-  transition: transform 150ms;
+  transition: transform 150ms, border-color 300ms;
 }
 .links > :hover > *::after {
   transform: translateY(10px) rotate(45deg);

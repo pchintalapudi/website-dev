@@ -1,5 +1,5 @@
 <template>
-<main class="dark main">
+<main>
   <title-vue></title-vue>
   <summary-vue></summary-vue>
 </main>
@@ -40,6 +40,26 @@ export default defineComponent({
   --yellow: 225, 255, 64;
   --red: 225,64,64;
 }
+@media (prefers-color-scheme: dark) {
+  main {
+    --bg-color: 18,18,18;
+    --fg-color: 222,222,222;
+    --blue: 0,127,255;
+    --green: 32,225,64;
+    --yellow: 225, 255, 64;
+    --red: 225,64,64;
+  }
+}
+@media not all and (prefers-color-scheme: dark) {
+  main {
+    --bg-color: 255,255,255;
+    --fg-color: 0,0,0;
+    --blue: 0, 100, 200;
+    --green: 0, 144, 64;
+    --yellow: 200, 175, 0;
+    --red: 206, 32, 32;
+  }
+}
 * {
   display: flex;
   flex-flow: column nowrap;
@@ -68,14 +88,17 @@ h5, h6 {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Rubik', sans-serif;
   color: rgb(var(--fg-color));
+  transition: color 300ms;
 }
 :any-link {
   text-decoration: none;
   color: rgb(var(--blue));
+  transition: color 300ms;
 }
-.main {
+main {
   background-color: rgb(var(--bg-color));
   color: rgba(var(--fg-color), 0.8);
+  transition: color 300ms, background-color 300ms;
 }
 .blue {
   --color: rgb(var(--blue));
@@ -91,9 +114,5 @@ h1, h2, h3, h4, h5, h6 {
 }
 html {
   scroll-behavior: smooth;
-}
-html, body {
-  padding:0;
-  margin:0;
 }
 </style>

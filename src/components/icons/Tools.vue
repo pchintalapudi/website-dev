@@ -30,6 +30,7 @@ export default defineComponent({
   transform: rotate(45deg);
   border-bottom-left-radius: 20%;
   border-bottom-right-radius: 20%;
+  transition: background-color 300ms;
 }
 .mallet::after {
   content: "";
@@ -41,6 +42,7 @@ export default defineComponent({
   width: 400%;
   background-color: var(--color);
   border-radius: 20%;
+  transition: background-color 300ms;
 }
 .tools {
   width: 40px;
@@ -56,6 +58,7 @@ export default defineComponent({
   border-bottom-left-radius: 30%;
   border-bottom-right-radius: 30%;
   transform: rotate(-45deg);
+  transition: background-color 300ms;
 }
 .wrench::after {
     content: "";
@@ -68,6 +71,7 @@ export default defineComponent({
     border-top-right-radius: 100% 50%;
     border-bottom-right-radius: 100% 50%;
     position: absolute;
+    transition: background-color 300ms;
 }
 .wrench::before {
     content: "";
@@ -80,5 +84,6 @@ export default defineComponent({
     border-top-left-radius: 100% 50%;
     border-bottom-left-radius: 100% 50%;
     position: absolute;
+    transition: background-color 300ms;
 }
 </style>

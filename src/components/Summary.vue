@@ -1,7 +1,7 @@
 <template>
     <article id="summary">
         <section>
-            <a class="linkable">
+            <a class="unlinkable">
                 <b class="icon"><tools :color="'blue'"></tools></b>
                 <h2>Skills and Tooling</h2>
             </a>
@@ -85,9 +85,13 @@ export default defineComponent({
     height: 100%;
     background-color: rgba(var(--fg-color), 0.1);
     border-radius: 50%;
+    transition: background-color 300ms;
 }
 .linkable {
     cursor: pointer;
+    align-items: center;
+}
+.unlinkable {
     align-items: center;
 }
 </style>

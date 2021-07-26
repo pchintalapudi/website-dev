@@ -28,6 +28,7 @@ export default defineComponent({
     color: rgb(var(--fg-color));
     font-weight: normal;
     margin: 20px;
+    transition: color 300ms, border-color 300ms;
 }
 .stat {
     align-items: center;

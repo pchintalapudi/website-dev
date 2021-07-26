@@ -24,6 +24,7 @@ export default defineComponent({
     border-bottom: 12px solid var(--color);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    transition: border-bottom-color 300ms;
 }
 .flask::after {
     position: absolute;
@@ -38,5 +39,6 @@ export default defineComponent({
     border: solid 2px var(--color);
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
+    transition: border-color 300ms;
 }
 </style>

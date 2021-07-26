@@ -28,6 +28,7 @@ export default defineComponent({
   margin: auto;
   border-radius: 20%;
   border: solid 2px var(--color);
+  transition: border-color 300ms;
 }
 .monitor>.content::after {
     content:"";
@@ -40,6 +41,7 @@ export default defineComponent({
     margin: auto;
     background-color: var(--color);
     border-radius: 1px;
+    transition: background-color 300ms;
 }
 .monitor>.content::before {
     content: "";
@@ -52,5 +54,6 @@ export default defineComponent({
     height: 50%;
     width: 2.5px;
     background-color: var(--color);
+    transition: background-color 300ms;
 }
 </style>
