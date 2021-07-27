@@ -98,9 +98,11 @@ export default defineComponent({
 }
 #title {
   min-height: 100vh;
+  font-size: 1.25em;
 }
 .text {
   text-align: center;
+  padding: 10px;
 }
 img {
   border-radius: 50%;
@@ -113,10 +115,11 @@ img {
 .contact {
     flex-flow: row wrap;
     justify-content: space-evenly;
+    align-items: center;
     flex: 1;
 }
 address {
-    display: block;
+    display: inline-block;
     font-style: normal;
 }
 address>* {

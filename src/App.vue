@@ -2,6 +2,8 @@
 <main>
   <title-vue></title-vue>
   <summary-vue></summary-vue>
+  <education-vue></education-vue>
+  <work-vue></work-vue>
 </main>
 </template>
 
@@ -9,21 +11,21 @@
 import { defineComponent } from 'vue';
 import TitleVue from './components/Title.vue';
 import SummaryVue from './components/Summary.vue';
+import EducationVue from './components/Education.vue';
+import WorkVue from './components/Work.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
     TitleVue,
-    SummaryVue  
+    SummaryVue,
+    EducationVue,
+    WorkVue
   }
 });
 </script>
 
 <style>
-#app {
-  font-family: 'Merriweather', serif;
-  font-size: 1.25em;
-}
 .light {
   --bg-color: 255,255,255;
   --fg-color: 0,0,0;
@@ -99,6 +101,10 @@ main {
   background-color: rgb(var(--bg-color));
   color: rgba(var(--fg-color), 0.8);
   transition: color 300ms, background-color 300ms;
+  font-family: 'Merriweather', serif;
+  scroll-behavior: smooth;
+  overflow: auto;
+  height: 100vh;
 }
 .blue {
   --color: rgb(var(--blue));
@@ -111,8 +117,5 @@ main {
 }
 .red {
   --color: rgb(var(--red));
-}
-html {
-  scroll-behavior: smooth;
 }
 </style>

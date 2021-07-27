@@ -9,7 +9,7 @@
             <numbered-stat :name="'Focus Areas'" :number="3" :subtext="'Intuitive Interfaces, Robust System Design, High Performance Standards'"></numbered-stat>
         </section>
         <section>
-            <a class="linkable">
+            <a class="linkable" href="#education">
                 <b class="icon"><graduation-cap :color="'green'"></graduation-cap></b>
                 <h2>Education and Coursework</h2>
             </a>
@@ -17,7 +17,7 @@
             <numbered-stat :name="'Classes'" :number="34" :subtext="'Engineering, Science, Math, Design'"></numbered-stat>
         </section>
         <section>
-            <a class="linkable">
+            <a class="linkable" href="#work">
                 <b class="icon"><flask :color="'yellow'"></flask></b>
                 <h2>Internships and Research</h2>
             </a>
@@ -25,7 +25,7 @@
             <numbered-stat :name="'Research Groups'" :number="4" :subtext="'Gertler Lab, Sandia National Labs, Blainey Lab, JuliaLab'"></numbered-stat>
         </section>
         <section>
-            <a class="linkable">
+            <a class="linkable" href="#projects">
                 <b class="icon"><monitor :color="'red'"></monitor></b>
                 <h2>Personal Projects</h2>
             </a>
@@ -61,6 +61,7 @@ export default defineComponent({
     min-height: 100vh;
     justify-content: space-evenly;
     padding: 20px;
+    font-size: 1.25em;
 }
 #summary > * {
     flex: 1;
