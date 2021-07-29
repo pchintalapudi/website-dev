@@ -127,11 +127,15 @@ main {
     background-color: rgba(var(--blue), 0.25);
   }
 
+  50% {
+    background-color: rgba(var(--blue), 0.25);
+  }
+
   to {
   }
 }
 #app main :target {
-  animation: highlight 1s linear;
+  animation: highlight 2s linear;
 }
 @media (max-width: 1000px) {
   h2 {

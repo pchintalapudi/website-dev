@@ -91,13 +91,13 @@ mark {
   font-size: 1rem;
 }
 .cs {
-  background-color: rgba(var(--red), 0.1);
+  background-color: rgba(var(--red), 0.05);
 }
 .bio {
-  background-color: rgba(var(--green), 0.1);
+  background-color: rgba(var(--green), 0.05);
 }
 .cs.bio {
-  background-color: rgba(var(--yellow), 0.1);
+  background-color: rgba(var(--yellow), 0.05);
 }
 
 @media (max-width: 1000px) {
