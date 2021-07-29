@@ -61,29 +61,29 @@ export default defineComponent({
   transition: background-color 300ms;
 }
 .wrench::after {
-    content: "";
-    left: 0;
-    top: 0;
-    width: 80%;
-    height: 32.5%;
-    transform: translate(112.5%, -50%);
-    background-color: var(--color);
-    border-top-right-radius: 100% 50%;
-    border-bottom-right-radius: 100% 50%;
-    position: absolute;
-    transition: background-color 300ms;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 80%;
+  height: 32.5%;
+  transform: translate(112.5%, -50%);
+  background-color: var(--color);
+  border-top-right-radius: 100% 50%;
+  border-bottom-right-radius: 100% 50%;
+  position: absolute;
+  transition: background-color 300ms;
 }
 .wrench::before {
-    content: "";
-    right: 0;
-    top: 0;
-    width: 80%;
-    height: 32.5%;
-    transform: translate(-112.5%, -50%);
-    background-color: var(--color);
-    border-top-left-radius: 100% 50%;
-    border-bottom-left-radius: 100% 50%;
-    position: absolute;
-    transition: background-color 300ms;
+  content: "";
+  right: 0;
+  top: 0;
+  width: 80%;
+  height: 32.5%;
+  transform: translate(-112.5%, -50%);
+  background-color: var(--color);
+  border-top-left-radius: 100% 50%;
+  border-bottom-left-radius: 100% 50%;
+  position: absolute;
+  transition: background-color 300ms;
 }
 </style>

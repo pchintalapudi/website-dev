@@ -44,7 +44,9 @@
     </section>
     <section class="links">
       <a href="#summary" class="text blue"><p>Quick Summary</p></a>
-      <a href="#education" class="text green"><p>Education and Coursework</p></a>
+      <a href="#education" class="text green"
+        ><p>Education and Coursework</p></a
+      >
       <a href="#work" class="text yellow"><p>Jobs and Internships</p></a>
       <a href="#projects" class="text red"><p>Personal Projects</p></a>
     </section>
@@ -61,7 +63,7 @@ export default defineComponent({
 .links {
   flex-flow: row wrap;
   justify-content: center;
-  flex: 1;
+  flex-basis: 125px;
   background-color: rgba(var(--fg-color), 0.1);
   max-height: 150px;
   transition: background-color 300ms;
@@ -97,7 +99,6 @@ export default defineComponent({
   flex: 1;
 }
 #title {
-  min-height: 100vh;
   font-size: 1.25em;
 }
 .text {
@@ -106,34 +107,39 @@ export default defineComponent({
 }
 img {
   border-radius: 50%;
-  height: calc(50vmin - 50px);
-  width: calc(50vmin - 50px);
+  height: 45vmin;
+  width: 45vmin;
   align-self: center;
-  margin: 50px;
+  margin: 5vmin;
   object-fit: cover;
 }
 .contact {
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    flex: 1;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 1;
 }
 address {
-    display: inline-block;
-    font-style: normal;
+  display: inline-block;
+  font-style: normal;
 }
-address>* {
-    display: inline;
+address > * {
+  display: inline;
 }
-address>i {
-    opacity:0;
-    user-select: none;
-    pointer-events: none;
-    transform: scale(0, 0);
-    position: absolute;
+address > i {
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
+  transform: scale(0, 0);
+  position: absolute;
 }
-.phone>p:not(:last-child)::after {
-    content:"-";
-    display: inline;
+.phone > p:not(:last-child)::after {
+  content: "-";
+  display: inline;
+}
+@media (min-width: 1000px) {
+  #title {
+    min-height: 100vh;
+  }
 }
 </style>

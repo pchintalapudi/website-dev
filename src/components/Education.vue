@@ -10,10 +10,10 @@
     </h4>
     <section class="courses">
       <article
-        v-for="cls in classes"
+        v-for="(cls, idx) in classes"
         :key="cls.id"
         :id="cls.id"
-        :class="[...cls.tags, 'class']"
+        :class="[...cls.tags, 'class', idx < 5 ? '' : idx < 10 ? 'top10' : idx < 20 ? 'top20' : 'all']"
       >
         <h6>{{ cls.name }}</h6>
         <i>{{ cls.id }}</i>
@@ -39,10 +39,10 @@ export default defineComponent({
 </script>
 <style scoped>
 #education {
-  min-height: 100vh;
   align-items: center;
   text-align: center;
   font-size: 1.25em;
+  padding: 20px 0;
 }
 mark {
   display: inline;
@@ -54,48 +54,72 @@ mark {
   display: inline-block;
 }
 .icon {
-    width: 120px;
-    height: 120px;
-    position: relative;
-    justify-content: center;
-    align-items: center;
+  width: 120px;
+  height: 120px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }
 .icon::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: rgba(var(--fg-color), 0.1);
-    transition: background-color 300ms;
-    border-radius: 50%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(var(--fg-color), 0.1);
+  transition: background-color 300ms;
+  border-radius: 50%;
 }
 .icon > * {
-    transform: scale(3);
+  transform: scale(3);
 }
 .courses {
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    padding: 20px;
+  padding: 20px 5vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  align-self: stretch;
+  column-gap: 10px;
+  row-gap: 10px;
 }
 .class {
-    width: 250px;
-    text-align: center;
-    transition: background-color 300ms;
-    margin: 10px;
-    padding: 10px;
-    justify-content: center;
-    border-radius: 10px;
-    font-size: 1rem;
+  text-align: center;
+  transition: background-color 300ms;
+  padding: 10px;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 1rem;
 }
 .cs {
-    background-color: rgba(var(--red), 0.1);
+  background-color: rgba(var(--red), 0.1);
 }
 .bio {
-    background-color: rgba(var(--green), 0.1);
+  background-color: rgba(var(--green), 0.1);
 }
 .cs.bio {
-    background-color: rgba(var(--yellow), 0.1);
+  background-color: rgba(var(--yellow), 0.1);
+}
+
+@media (max-width: 1000px) {
+  .class.all {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .class.top20 {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .icon {
+    width: 100px;
+    height: 100px;
+  }
+  .icon > * {
+    transform: scale(2.5);
+  }
+  .class.top10 {
+    display: none;
+  }
 }
 </style>

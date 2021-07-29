@@ -2,7 +2,7 @@
   <article id="work">
     <b class="icon"><flask-vue :color="'yellow'"></flask-vue></b>
     <section class="body">
-      <section>
+      <section class="internships">
         <h2 class="header">Internships</h2>
         <section class="experiences">
           <article
@@ -26,7 +26,7 @@
           </article>
         </section>
       </section>
-      <section>
+      <section class="research">
         <h2 class="header">Research</h2>
         <section class="experiences">
           <article
@@ -72,9 +72,9 @@ export default defineComponent({
     },
   },
   methods: {
-    dateFromString(date: string) {
-      if (date === "present") {
-        return date;
+    dateFromString(date: string | null) {
+      if (date === null) {
+        return "Present";
       }
       const [month, year] = date.split("-");
       return (
@@ -97,6 +97,7 @@ export default defineComponent({
   font-size: 1.125em;
   padding: 20px;
   align-items: center;
+  padding: 20px 5vw;
 }
 .icon {
   width: 120px;
@@ -120,19 +121,14 @@ export default defineComponent({
   transform: scale(3);
 }
 .body {
-  flex-flow: row wrap;
+  display: grid;
+  grid-auto-flow: column;
 }
 .body > * {
-  width: 50%;
-  padding: 5px;
+  display: contents;
 }
 .experiences {
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-  background-color: rgba(var(--fg-color), 0.02);
-  transition: background-color 300ms;
-  height: 100%;
-  align-items: flex-start;
+  display: contents;
 }
 .work {
   margin: 10px;
@@ -140,8 +136,8 @@ export default defineComponent({
   transition: background-color 300ms;
   border-radius: 10px;
 }
-.work > p {
-  font-size: 1rem;
+.work > p, .metadata {
+  font-size: 0.8em;
   padding: 10px 0;
 }
 .header {
@@ -156,5 +152,23 @@ export default defineComponent({
 }
 .description >>> * {
   display: inline-block;
+}
+.internships .work, .internships .header {
+  grid-column: 1;
+}
+.research .work, .research .header {
+  grid-column: 2;
+}
+@media (max-width: 600px) {
+  .icon {
+    width: 100px;
+    height: 100px;
+  }
+  .icon > * {
+    transform: scale(2.5);
+  }
+  .research .work, .research .header {
+    grid-column: 1;
+  }
 }
 </style>

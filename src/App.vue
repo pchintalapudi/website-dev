@@ -4,6 +4,7 @@
   <summary-vue></summary-vue>
   <education-vue></education-vue>
   <work-vue></work-vue>
+  <projects-vue></projects-vue>
 </main>
 </template>
 
@@ -13,6 +14,7 @@ import TitleVue from './components/Title.vue';
 import SummaryVue from './components/Summary.vue';
 import EducationVue from './components/Education.vue';
 import WorkVue from './components/Work.vue';
+import ProjectsVue from './components/Projects.vue';
 
 export default defineComponent({
   name: 'App',
@@ -20,7 +22,8 @@ export default defineComponent({
     TitleVue,
     SummaryVue,
     EducationVue,
-    WorkVue
+    WorkVue,
+    ProjectsVue
   }
 });
 </script>
@@ -98,8 +101,9 @@ h1, h2, h3, h4, h5, h6 {
   transition: color 300ms;
 }
 main {
+  --text-color: rgba(var(--fg-color), 0.8);
   background-color: rgb(var(--bg-color));
-  color: rgba(var(--fg-color), 0.8);
+  color: var(--text-color);
   transition: color 300ms, background-color 300ms;
   font-family: 'Merriweather', serif;
   scroll-behavior: smooth;
@@ -117,5 +121,44 @@ main {
 }
 .red {
   --color: rgb(var(--red));
+}
+@keyframes highlight {
+  from {
+    background-color: rgba(var(--blue), 0.25);
+  }
+
+  to {
+  }
+}
+#app main :target {
+  animation: highlight 1s linear;
+}
+@media (max-width: 1000px) {
+  h2 {
+    font-size: 1.25em;
+  }
+  h3 {
+    font-size: 1.125em;
+  }
+  h4 {
+    font-size: 1.0625em;
+  }
+  h5, h6 {
+    font-size: 1.03125em;
+  }
+}
+@media (max-width: 800px) {
+  h2 {
+    font-size: 1.125em;
+  }
+  h3 {
+    font-size: 1.0625em;
+  }
+  h4 {
+    font-size: 1.03125em;
+  }
+  h5, h6 {
+    font-size: 1.0156125em;
+  }
 }
 </style>
