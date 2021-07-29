@@ -11,9 +11,9 @@
             :class="[...internship.tags, 'work']"
             :id="internship.id"
           >
-            <h5>{{ internship.role }}</h5>
+            <h3>{{ internship.role }}</h3>
             <span class="metadata">
-              <h6>{{ internship.company }}</h6>
+              <h4>{{ internship.company }}</h4>
               <i
                 >{{ dateFromString(internship.start) }} to
                 {{ dateFromString(internship.end) }}</i
@@ -35,9 +35,9 @@
             :class="[...experience.tags, 'work']"
             :id="experience.id"
           >
-            <h5>{{ experience.role }}</h5>
+            <h3>{{ experience.role }}</h3>
             <span class="metadata">
-              <h6>{{ experience.company }}</h6>
+              <h4>{{ experience.company }}</h4>
               <i
                 >{{ dateFromString(experience.start) }} to
                 {{ dateFromString(experience.end) }}</i
@@ -159,7 +159,7 @@ export default defineComponent({
 .research .work, .research .header {
   grid-column: 2;
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .icon {
     width: 100px;
     height: 100px;
@@ -167,6 +167,8 @@ export default defineComponent({
   .icon > * {
     transform: scale(2.5);
   }
+}
+@media (max-width: 600px) {
   .research .work, .research .header {
     grid-column: 1;
   }

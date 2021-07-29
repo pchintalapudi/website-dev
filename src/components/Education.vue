@@ -15,7 +15,7 @@
         :id="cls.id"
         :class="[...cls.tags, 'class', idx < 5 ? '' : idx < 10 ? 'top10' : idx < 20 ? 'top20' : 'all']"
       >
-        <h6>{{ cls.name }}</h6>
+        <h5>{{ cls.name }}</h5>
         <i>{{ cls.id }}</i>
       </article>
     </section>
@@ -105,12 +105,7 @@ mark {
     display: none;
   }
 }
-@media (max-width: 700px) {
-  .class.top20 {
-    display: none;
-  }
-}
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .icon {
     width: 100px;
     height: 100px;
@@ -118,6 +113,11 @@ mark {
   .icon > * {
     transform: scale(2.5);
   }
+  .class.top20 {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
   .class.top10 {
     display: none;
   }

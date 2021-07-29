@@ -1,10 +1,10 @@
 <template>
   <article id="summary">
     <section>
-      <a class="unlinkable">
+      <p class="unlinkable">
         <b class="icon"><tools :color="'blue'"></tools></b>
         <h2>Skills and Tooling</h2>
-      </a>
+      </p>
       <div class="data">
         <numbered-stat
           :name="'Coding Languages'"

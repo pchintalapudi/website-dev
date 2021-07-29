@@ -1,7 +1,7 @@
 <template>
   <article class="stat">
-    <h4 class="number">{{ number }}</h4>
-    <h3 class="name"><p class="inline-number" aria-hidden="true">{{ number }}</p>&nbsp;{{ name }}</h3>
+    <h3 class="number">{{ number }}</h3>
+    <h4 class="name"><p class="inline-number" aria-hidden="true">{{ number }}</p>&nbsp;{{ name }}</h4>
     <p class="subtext">{{ subtext }}</p>
   </article>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <article id="title">
     <section class="header">
-      <img src="../assets/profile.jpg" />
+      <img src="../assets/profile.jpg" alt="A profile picture of Prem Chintalapudi" />
       <h1 class="text">Prem Chintalapudi</h1>
       <p class="text">
         Senior c/o 2022 attending MIT double majoring in Computer Science &
@@ -9,38 +9,42 @@
       </p>
     </section>
     <section class="contact">
-      <address class="email">
-        <p>premc</p>
-        <i aria-hidden="true">@SLDKFSON@@~!!~!@#$%^&*()</i>
-        <p>@</p>
-        <i aria-hidden="true">@SLDKFSON@@~!!~!@#$%^&*()</i>
-        <p>mit.edu</p>
-      </address>
-      <address class="phone">
-        <p>925</p>
-        <i aria-hidden="true">@SLDKFSON@@~!!~!@#$%^&*(234)567-9000</i>
-        <p>216</p>
-        <i aria-hidden="true">@SLDKFSON@@~!!~!@#$%^&*(875)456-213</i>
-        <p>1580</p>
-      </address>
-      <address class="home">
-        <p>5109&nbsp;</p>
-        <i aria-hidden="true">@SLDKFSON@@~!!~!@#$%^&*(234)567-9000</i>
-        <p>Campion&nbsp;</p>
-        <i aria-hidden="true">@SLDKFSON@@~!!~!@#$%^&*(234)567-9000</i>
-        <p>Drive,&nbsp;</p>
-        <i aria-hidden="true">@SLDKFSON@@~!!~!@#$%^&*(234)567-9000</i>
-        <p>CA&nbsp;</p>
-        <i aria-hidden="true">@SLDKFSON@@~!!~!@#$%^&*(234)567-9000</i>
-        <p>94582</p>
-      </address>
-      <address class="resume">
-        <a
-          href="https://github.com/pchintalapudi/home/raw/master/src/assets/Prem_Chintalapudi_Resume.pdf"
-          download=""
-          >Resume (Download)</a
-        >
-      </address>
+      <div class="row">
+        <address class="email">
+          <p>premc</p>
+          <i aria-hidden="true">@SLDKFSON@@~!!~!@#$%^&*()</i>
+          <p>@</p>
+          <i aria-hidden="true">@SLDKFSON@@~!!~!@#$%^&*()</i>
+          <p>mit.edu</p>
+        </address>
+        <address class="phone">
+          <p>925</p>
+          <i aria-hidden="true">@SLDKFSON@@~!!~!@#$%^&*(234)567-9000</i>
+          <p>216</p>
+          <i aria-hidden="true">@SLDKFSON@@~!!~!@#$%^&*(875)456-213</i>
+          <p>1580</p>
+        </address>
+      </div>
+      <div class="row">
+        <address class="home">
+          <p>5109&nbsp;</p>
+          <i aria-hidden="true">@SLDKFSON@@~!!~!@#$%^&*(234)567-9000</i>
+          <p>Campion&nbsp;</p>
+          <i aria-hidden="true">@SLDKFSON@@~!!~!@#$%^&*(234)567-9000</i>
+          <p>Drive,&nbsp;</p>
+          <i aria-hidden="true">@SLDKFSON@@~!!~!@#$%^&*(234)567-9000</i>
+          <p>CA&nbsp;</p>
+          <i aria-hidden="true">@SLDKFSON@@~!!~!@#$%^&*(234)567-9000</i>
+          <p>94582</p>
+        </address>
+        <address class="resume">
+          <a
+            href="https://github.com/pchintalapudi/home/raw/master/src/assets/Prem_Chintalapudi_Resume.pdf"
+            download=""
+            >Resume (Download)</a
+          >
+        </address>
+      </div>
     </section>
     <section class="links">
       <a href="#summary" class="text blue"><p>Quick Summary</p></a>
@@ -63,18 +67,17 @@ export default defineComponent({
 .links {
   flex-flow: row wrap;
   justify-content: center;
-  flex-basis: 125px;
   background-color: rgba(var(--fg-color), 0.1);
-  max-height: 150px;
   transition: background-color 300ms;
 }
-.links > * {
+.links > .text {
   justify-content: center;
   align-items: center;
   flex: 1;
   font-weight: bold;
   transition: background-color 150ms, color 150ms;
   color: rgb(var(--color));
+  padding-bottom: 30px;
 }
 .links > :hover {
   background-color: rgba(var(--fg-color), 0.1);
@@ -119,9 +122,13 @@ img {
   align-items: center;
   flex: 1;
 }
+.row {
+  display: contents;
+}
 address {
   display: inline-block;
   font-style: normal;
+  padding: 20px 10px;
 }
 address > * {
   display: inline;
@@ -140,6 +147,19 @@ address > i {
 @media (min-width: 1000px) {
   #title {
     min-height: 100vh;
+  }
+}
+@media (max-width: 1000px) {
+  address {
+    font-size: 0.8em;
+  }
+}
+@media (max-width: 800px) {
+  address {
+    font-size: 1em;
+  }
+  #title {
+    font-size: 1em;
   }
 }
 </style>

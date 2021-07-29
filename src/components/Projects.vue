@@ -11,7 +11,7 @@
             :class="[...project.tags, 'project']"
             :id="project.id"
           >
-            <h5>{{ project.name }}</h5>
+            <h3>{{ project.name }}</h3>
             <span class="metadata">
               <i
                 >{{ dateFromString(project.start) }} to
@@ -130,7 +130,7 @@ export default defineComponent({
 .link {
   align-self: flex-start;
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .icon {
     width: 100px;
     height: 100px;
@@ -138,6 +138,8 @@ export default defineComponent({
   .icon > * {
     transform: scale(2.5);
   }
+}
+@media (max-width: 600px) {
   .projects {
     grid-template-columns: 1fr;
   }
