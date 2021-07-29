@@ -1,8 +1,8 @@
 export const courses = [
     {
-        "name": "Computer Systems Engineering",
-        "id": "6.033",
-        "tags": ["cs"]
+        "name": "Computational Systems Biology: Deep Learning in the Life Sciences",
+        "id": "6.874",
+        "tags": ["cs", "bio"]
     },
     {
         "name": "Software Performance Engineering",
@@ -10,14 +10,14 @@ export const courses = [
         "tags": ["cs"]
     },
     {
-        "name": "Probability and Random Variables",
-        "id": "18.600",
+        "name": "Design and Analysis of Algorithms",
+        "id": "6.046",
         "tags": ["cs"]
     },
     {
-        "name": "Introduction to EECS via Interconnected Embedded Systems",
-        "id": "6.08",
-        "tags": ["cs"]
+        "name": "Introduction to Machine Learning",
+        "id": "6.036",
+        "tags": ["cs", "bio"]
     },
     {
         "name": "Elements of Software Construction",
@@ -25,8 +25,28 @@ export const courses = [
         "tags": ["cs"]
     },
     {
+        "name": "Fields, Forces and Flows in Biological Systems",
+        "id": "20.330",
+        "tags": ["bio"]
+    },
+    {
+        "name": "Introduction to EECS via Interconnected Embedded Systems",
+        "id": "6.08",
+        "tags": ["cs"]
+    },
+    {
         "name": "Introduction to Algorithms",
         "id": "6.006",
+        "tags": ["cs"]
+    },
+    {
+        "name": "Linear Algebra",
+        "id": "18.06",
+        "tags": ["cs", "bio"]
+    },
+    {
+        "name": "Probability and Random Variables",
+        "id": "18.600",
         "tags": ["cs"]
     },
     {
@@ -40,64 +60,14 @@ export const courses = [
         "tags": ["cs"]
     },
     {
-        "name": "Introduction to C and C++",
-        "id": "6.179",
-        "tags": ["cs"]
-    },
-    {
-        "name": "Introduction to Computer Science Programming in Python",
-        "id": "6.0001",
-        "tags": ["cs", "bio"]
-    },
-    {
-        "name": "Computational Systems Biology: Deep Learning in the Life Sciences",
-        "id": "6.874",
-        "tags": ["cs", "bio"]
-    },
-    {
-        "name": "Fields, Forces and Flows in Biological Systems",
-        "id": "20.330",
-        "tags": ["bio"]
-    },
-    {
-        "name": "Design and Analysis of Algorithms",
-        "id": "6.046",
-        "tags": ["cs"]
-    },
-    {
-        "name": "Introduction to Machine Learning",
-        "id": "6.036",
-        "tags": ["cs", "bio"]
-    },
-    {
-        "name": "Linear Algebra",
-        "id": "18.06",
-        "tags": ["cs", "bio"]
-    },
-    {
-        "name": "Introduction to Computational Thinking and Data Science",
-        "id": "6.0002",
-        "tags": ["cs", "bio"]
-    },
-    {
-        "name": "Introduction to MATLAB",
-        "id": "6.057",
-        "tags": ["cs", "bio"]
-    },
-    {
         "name": "Differential Equations",
         "id": "18.03",
         "tags": ["cs", "bio"]
     },
     {
-        "name": "Multivariable Calculus",
-        "id": "18.02",
-        "tags": ["cs", "bio"]
-    },
-    {
-        "name": "Single-variable Calculus",
-        "id": "18.01",
-        "tags": ["cs", "bio"]
+        "name": "Computer Systems Engineering",
+        "id": "6.033",
+        "tags": ["cs"]
     },
     {
         "name": "Instrumentation and Measurement for Biological Systems",
@@ -130,14 +100,44 @@ export const courses = [
         "tags": ["bio"]
     },
     {
+        "name": "General Biochemistry",
+        "id": "7.05",
+        "tags": ["bio"]
+    },
+    {
         "name": "Introduction to Psychological Science",
         "id": "9.00",
         "tags": ["bio"]
     },
     {
-        "name": "General Biochemistry",
-        "id": "7.05",
-        "tags": ["bio"]
+        "name": "Introduction to Computational Thinking and Data Science",
+        "id": "6.0002",
+        "tags": ["cs", "bio"]
+    },
+    {
+        "name": "Introduction to MATLAB",
+        "id": "6.057",
+        "tags": ["cs", "bio"]
+    },
+    {
+        "name": "Multivariable Calculus",
+        "id": "18.02",
+        "tags": ["cs", "bio"]
+    },
+    {
+        "name": "Introduction to C and C++",
+        "id": "6.179",
+        "tags": ["cs"]
+    },
+    {
+        "name": "Introduction to Computer Science Programming in Python",
+        "id": "6.0001",
+        "tags": ["cs", "bio"]
+    },
+    {
+        "name": "Single-variable Calculus",
+        "id": "18.01",
+        "tags": ["cs", "bio"]
     },
     {
         "name": "Physics II",
