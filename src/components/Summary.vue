@@ -139,6 +139,12 @@ export default defineComponent({
   cursor: pointer;
   align-items: center;
 }
+.linkable > * {
+  transition: transform 300ms;
+}
+.linkable:hover > * {
+  transform: scale(1.05);
+}
 .unlinkable {
   align-items: center;
 }

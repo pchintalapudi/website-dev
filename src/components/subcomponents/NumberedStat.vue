@@ -63,7 +63,7 @@ export default defineComponent({
     font-weight: normal;
     color: var(--text-color);
     transition: color 300ms;
-    font-family: "Merriweather";
+    font-family: "Montserrat", sans-serif;
     font-size: 1em;
   }
   .number {
