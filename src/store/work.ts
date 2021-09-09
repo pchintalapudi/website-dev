@@ -109,7 +109,7 @@ export const work = [
         "company": "Sandia National Laboratories",
         "role": "Undergraduate Intern R&D",
         "start": "06-2019",
-        "end": "08-2018",
+        "end": "08-2019",
         "description": "My research project at [Sandia National Labs](https://www.sandia.gov/locations/livermore_california.html) was focused on mesenchymal stem cells, and characterizing their potential antibacterial properties. In support of this goal, I learned to make and pour agar plates and LB broth, culture bacterial and mammalian cells in a variety of environments, transfect and clone plasmids into mammalian and bacterial cells, and harvest DNA from bacteria for sequencing. From an assaying perspective, I learned the basics of flow cytometry and colony counting to assess antibacterial activity.",
         "supervisors": [
             {
