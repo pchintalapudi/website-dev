@@ -84,7 +84,7 @@ export default defineComponent({
   --fg-color: 222, 222, 222;
   --blue: 0, 127, 255;
   --green: 32, 225, 64;
-  --yellow: 225, 255, 64;
+  --yellow: 255, 215, 0;
   --red: 225, 64, 64;
 }
 * {

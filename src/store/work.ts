@@ -4,7 +4,7 @@ export const work = [
         "company":"JuliaLab",
         "role":"Undergraduate Researcher",
         "start":"03-2021",
-        "end":"05-2021",
+        "end":null,
         "tags":[
             "cs",
             "research"
