@@ -26,17 +26,6 @@
         </address>
       </div>
       <div class="row">
-        <address class="home">
-          <p>5109&nbsp;</p>
-          <i aria-hidden="true">@SLDKFSON@@~!!~!@#$%^&*(234)567-9000</i>
-          <p>Campion&nbsp;</p>
-          <i aria-hidden="true">@SLDKFSON@@~!!~!@#$%^&*(234)567-9000</i>
-          <p>Drive,&nbsp;</p>
-          <i aria-hidden="true">@SLDKFSON@@~!!~!@#$%^&*(234)567-9000</i>
-          <p>CA&nbsp;</p>
-          <i aria-hidden="true">@SLDKFSON@@~!!~!@#$%^&*(234)567-9000</i>
-          <p>94582</p>
-        </address>
         <address class="resume">
           <a
             href="https://github.com/pchintalapudi/home/raw/master/src/assets/Prem_Chintalapudi_Resume.pdf"

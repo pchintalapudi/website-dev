@@ -13,6 +13,7 @@ interface Work {
     description: string;
     tags: Array<"cs" | "bio" | "research" | "internship">;
     supervisors: Array<{ name: string, title: string }>;
+    hidden?:boolean;
 }
 
 interface Project {

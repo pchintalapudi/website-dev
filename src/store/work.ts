@@ -26,6 +26,28 @@ export const work = [
         "description": "Building off my past experiences in [performance engineering](#6.172) and outlining a [virtual machine](#vm), I worked in MIT's JuliaLab to improve the Julia compiler. Over the course of a semester I extended some of the Julia-specific passes in the runtime's compiler's LLVM optimization pipeline to minimize allocations. Specifically, I implemented multiple optimizations, including adjusting the code generator to avoid emitting useless instructions, hoisting allocations and write barriers out of loops, and teaching the compiler to hoist allocations out of specific branch idioms."
     },
     {
+        "id":"nvidia",
+        "company": "NVIDIA",
+        "role": "Architecture Intern",
+        "start": "06-2021",
+        "end": "08-2021",
+        "tags": [
+            "cs",
+            "internship"
+        ],
+        "supervisors": [
+            {
+                "title": "Manager",
+                "name": "Braxton Thomason"
+            },
+            {
+                "title": "Mentor",
+                "name": "Sameer Deshpande"
+            }
+        ],
+        "description": "For the summer after my junior year, I interned at [NVIDIA](nvidia.com), the company that invented the GPU. As part of my assignment, I designed, specified, built, and tested a replayer for GPU packets in C++. By leveraging the power of C++ templates and automated type inference, I was able to provide a low-cost extensible method of autogenerating serialization methods without needing to explicitly specify the type of object that was being serialized. Additionally, I carefully designed the program to be robust and save enough data to replicate segmentation faults and other signal-based program crashes while also incrementally compressing the saved data on the fly to reduce memory and disk usage. I further developed several tools to aggregate statistics about the flow of packets into and out of GPU units. In the process of developing the system, I also honed my skills with using ssh, tmux, and Perforce as a version control system."
+    },
+    {
         "id":"docai",
         "company": "doc.ai",
         "role": "Software Engineering Intern",
@@ -80,6 +102,7 @@ export const work = [
             "cs",
             "internship"
         ],
+        hidden:true,
         "supervisors": []
     },
     {
