@@ -3,6 +3,7 @@
     <b class="icon"><graduation-cap :color="'green'"></graduation-cap></b>
     <h2 class="title">Education and Coursework</h2>
     <h3 class="school">Massachusetts Institute of Technology</h3>
+    <h4 class="degree">Masters of Engineering in <mark class="red">Electrical Engineering and Computer Science</mark></h4>
     <h4 class="degree">
       Bachelor of Science in
       <mark class="red">Computer Science Engineering</mark> and
