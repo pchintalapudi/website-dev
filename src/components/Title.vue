@@ -28,7 +28,7 @@
       <div class="row">
         <address class="resume">
           <a
-            href="https://github.com/pchintalapudi/home/raw/master/src/assets/Prem_Chintalapudi_Resume.pdf"
+            href="https://github.com/pchintalapudi/pchintalapudi.github.io/raw/master/src/assets/Prem_Chintalapudi_Resume.pdf"
             download=""
             >Resume (Download)</a
           >
