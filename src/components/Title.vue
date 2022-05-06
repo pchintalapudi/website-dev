@@ -4,8 +4,8 @@
       <img src="../assets/profile.jpg" alt="A profile picture of Prem Chintalapudi" />
       <h1 class="text">Prem Chintalapudi</h1>
       <p class="text">
-        Senior c/o 2022 attending MIT double majoring in Computer Science &
-        Engineering and Bioengineering
+        Masters of Engineering student in Computer Science &
+        Engineering and Bioengineering at MIT
       </p>
     </section>
     <section class="contact">

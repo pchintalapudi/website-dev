@@ -8,8 +8,8 @@
       <div class="data">
         <numbered-stat
           :name="'Coding Languages'"
-          :number="7"
-          :subtext="'C++, Java, C, Python, Typescript, Javascript, MATLAB'"
+          :number="9"
+          :subtext="'C++, Java, C, Python, Typescript, Javascript, Go, MATLAB, Julia'"
         ></numbered-stat>
         <p class="conjunction">and</p>
         <numbered-stat

@@ -1,5 +1,15 @@
 export const courses = [
     {
+        "name": "Computer Systems Security",
+        "id": "6.858",
+        "tags": ["cs"]
+    },
+    {
+        "name": "Distributed Systems",
+        "id": "6.824",
+        "tags": ["cs"]
+    },
+    {
         "name": "Computational Systems Biology: Deep Learning in the Life Sciences",
         "id": "6.874",
         "tags": ["cs", "bio"]
