@@ -1,4 +1,5 @@
-import { createStore } from 'vuex'
+import { InjectionKey } from 'vue';
+import { createStore, Store, useStore as baseUseStore } from 'vuex'
 
 export interface Class {
   name: string;
@@ -35,10 +36,13 @@ export interface State {
   projects: Project[];
 }
 
-export default createStore({
+export const key : InjectionKey<Store<State>> = Symbol();
+
+export const store = createStore({
   state: {
-  },
-  getters: {
+    courses:[],
+    work: [],
+    projects: []
   },
   mutations: {
   },
@@ -46,4 +50,8 @@ export default createStore({
   },
   modules: {
   }
-})
+});
+
+export function useStore() {
+  return baseUseStore(key);
+}
