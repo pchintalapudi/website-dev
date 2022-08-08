@@ -65,7 +65,7 @@ export default defineComponent({
   },
   computed: {
     internships() {
-      return useStore().state.work.filter((w) => w.tags.includes("internship") && !w.hidden);
+      return useStore().state.work.filter((w) => w.tags.includes("internship") && !w.hidden && !w.tags.includes("research"));
     },
     research() {
       return useStore().state.work.filter((w) => w.tags.includes("research") && !w.hidden);

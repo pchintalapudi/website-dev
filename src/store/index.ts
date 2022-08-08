@@ -1,5 +1,8 @@
 import { InjectionKey } from 'vue';
 import { createStore, Store, useStore as baseUseStore } from 'vuex'
+import courses from './classes.yaml'
+import work from './work.yaml'
+import projects from './projects.yaml'
 
 export interface Class {
   name: string;
@@ -40,9 +43,9 @@ export const key : InjectionKey<Store<State>> = Symbol();
 
 export const store = createStore({
   state: {
-    courses:[],
-    work: [],
-    projects: []
+    courses,
+    work,
+    projects
   },
   mutations: {
   },

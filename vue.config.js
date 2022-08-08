@@ -6,11 +6,9 @@ module.exports = defineConfig({
     config.module
       .rule('yaml')
         .test(/\.ya?ml?$/)
-        .use('json-loader')
-          .loader('json-loader')
+        .use('yaml-loader')
+          .loader('yaml-loader')
           .end()
-        .use('js-yaml-loader')
-          .loader('js-yaml-loader')
   },
   outputDir: path.resolve(__dirname, "docs"),
   assetsDir: "static"

@@ -8,14 +8,14 @@
       <div class="data">
         <numbered-stat
           :name="'Coding Languages'"
-          :number="9"
-          :subtext="'C++, Java, C, Python, Typescript, Javascript, Go, MATLAB, Julia'"
+          :number="languages.length"
+          :subtext="languages.join(', ')"
         ></numbered-stat>
         <p class="conjunction">and</p>
         <numbered-stat
           :name="'Focus Areas'"
-          :number="3"
-          :subtext="'Intuitive Interfaces, Robust System Design, High Performance Standards'"
+          :number="focuses.length"
+          :subtext="focuses.join(', ')"
         ></numbered-stat>
       </div>
     </section>
@@ -33,7 +33,7 @@
         <p class="conjunction">and</p>
         <numbered-stat
           :name="'Classes'"
-          :number="34"
+          :number="classes.length"
           :subtext="'Engineering, Science, Math, Design'"
         ></numbered-stat>
       </div>
@@ -46,14 +46,14 @@
       <div class="data">
         <numbered-stat
           :name="'Internships'"
-          :number="4"
-          :subtext="'NVIDIA, doc.ai, McAfee, Sandia National Labs'"
+          :number="internships.length"
+          :subtext="Array.from(new Set(internships.map(i => i.company))).join(', ')"
         ></numbered-stat>
         <p class="conjunction">and</p>
         <numbered-stat
           :name="'Research Groups'"
-          :number="4"
-          :subtext="'Gertler Lab, Sandia National Labs, Blainey Lab, JuliaLab'"
+          :number="research.length"
+          :subtext="Array.from(new Set(research.map(i => i.company))).join(', ')"
         ></numbered-stat>
       </div>
     </section>
@@ -65,7 +65,7 @@
       <div class="data">
         <numbered-stat
           :name="'Major Projects'"
-          :number="6"
+          :number="projects.length"
           :subtext="'Long Project Lifetimes and Large Feature Sets'"
         ></numbered-stat>
         <p class="conjunction">and</p>
@@ -85,6 +85,7 @@ import GraduationCap from "./icons/GraduationCap.vue";
 import Tools from "./icons/Tools.vue";
 import Monitor from "./icons/Monitor.vue";
 import Flask from "./icons/Flask.vue";
+import { useStore } from "@/store";
 
 export default defineComponent({
   components: {
@@ -95,6 +96,26 @@ export default defineComponent({
     Flask,
   },
   setup() {},
+  computed: {
+    internships() {
+      return useStore().state.work.filter(w => w.tags.includes('internship') && !w.hidden);
+    },
+    research() {
+      return useStore().state.work.filter(w => w.tags.includes('research') && !w.hidden);
+    },
+    classes() {
+      return useStore().state.courses;
+    },
+    projects() {
+      return useStore().state.projects;
+    },
+    languages() {
+      return ['C++', 'Java', 'Python', 'C', 'Typescript', 'Javascript', 'MATLAB', 'Go', 'Julia', 'Bash']
+    },
+    focuses() {
+      return ['High Performance Standards', 'Robust System Design', 'Intuitive Interfaces']
+    }
+  }
 });
 </script>
 <style scoped>
