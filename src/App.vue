@@ -129,7 +129,10 @@ h6 {
 :any-link {
   text-decoration: none;
   color: rgb(var(--blue));
-  transition: color 300ms;
+  transition: color 300ms, opacity 300ms;
+}
+:any-link:hover {
+  opacity: 0.5;
 }
 main {
   position: relative;

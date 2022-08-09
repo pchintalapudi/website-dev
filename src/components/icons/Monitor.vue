@@ -50,7 +50,7 @@ export default defineComponent({
   right: 0;
   margin: auto;
   bottom: 0;
-  transform: translateY(120%);
+  transform: translateY(119%);
   height: 50%;
   width: 2.5px;
   background-color: var(--color);

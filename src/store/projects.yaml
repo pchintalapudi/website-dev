@@ -28,6 +28,30 @@
   start: 06-2020
   end: null
   github: https://github.com/pchintalapudi/virtual-machine
+- id: personal
+  name: Personal Website
+  description: >-
+    This project (displayed here), is the project to build my own personal website
+    that presents the information on my resume in a more visually appealing manner.
+    After converting my resume's information into YAML files and marking out particular
+    metadata within those, I use Vue.js to render the content in those YAML files
+    dynamically. Apart from Vue.js and a few Markdown and YAML parsing libraries, I
+    don't include any other dependencies to keep the website lightweight and as
+    personalized as possible. I also cross-check my website against Chrome's
+    Lighthouse website audits to ensure that I'm meeting good web development standards
+    for performance, accessibility, and SEO.
+  tags:
+    - typescript
+    - vue
+    - html
+    - css
+    - computer
+    - programming
+    - code
+  start: 08-2020
+  end: null
+  github: https://github.com/pchintalapudi/pchintalapudi.github.io
+  link: https://pchintalapudi.github.io/
 - id: planner
   name: Course Planner
   description: >-
@@ -61,10 +85,12 @@
     This project in particular has been a long journey, from its original
     inception in JavaFX and Java to its current form in Vue.js and Typescript.
     Modeled after ChemDraw, the drawer uses SVG and a healthy amount of CSS to
-    render beautiful pictures of molecules drawn in both line structures and an
+    render pictures of molecules drawn in both line structures and an
     almost-3D mode (it fakes it using gradients and 2D shapes on the same
-    plane). I was able to learn a decent amount of CSS transforms and geometry
-    of mouse translation, as well as designing and redesigning many aspect of
+    plane). Additionally, it supports inferring hydrogens, a feature that
+    significantly reduces the time taken to generate ball-and-stick models.
+    I was able to learn a decent amount of CSS transforms and geometry of
+    mouse translation, as well as designing and redesigning many aspects of
     the program as it progressed through many UX and language iterations.
   tags:
     - typescript

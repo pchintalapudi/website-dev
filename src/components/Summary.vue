@@ -7,7 +7,7 @@
       </p>
       <div class="data">
         <numbered-stat
-          :name="'Coding Languages'"
+          :name="'Programming Languages'"
           :number="languages.length"
           :subtext="languages.join(', ')"
         ></numbered-stat>
@@ -20,7 +20,7 @@
       </div>
     </section>
     <section>
-      <a class="linkable" href="#education">
+      <a class="linkable" href="#education" style="--linkable-color:var(--green)">
         <b class="icon"><graduation-cap :color="'green'"></graduation-cap></b>
         <h2>Education and Coursework</h2>
       </a>
@@ -39,7 +39,7 @@
       </div>
     </section>
     <section>
-      <a class="linkable" href="#work">
+      <a class="linkable" href="#work" style="--linkable-color:var(--yellow)">
         <b class="icon"><flask :color="'yellow'"></flask></b>
         <h2>Internships and Research</h2>
       </a>
@@ -58,28 +58,29 @@
       </div>
     </section>
     <section>
-      <a class="linkable" href="#projects">
+      <a class="linkable" href="#projects" style="--linkable-color:var(--red)">
         <b class="icon"><monitor :color="'red'"></monitor></b>
-        <h2>Personal Projects</h2>
+        <h2>Productivity</h2>
       </a>
       <div class="data">
         <numbered-stat
-          :name="'Major Projects'"
+          :name="'Personal Projects'"
           :number="projects.length"
           :subtext="'Long Project Lifetimes and Large Feature Sets'"
         ></numbered-stat>
         <p class="conjunction">and</p>
         <numbered-stat
-          :name="'Websites'"
-          :number="3"
-          :subtext="'MakeMIT 2019 & 2020, LMF 2020-present, This Website'"
+          :name="'Commits to Julia'"
+          :number="merged_prs"
+          :subtext="'Number of commits on Julia master branch'"
+          :loading="loading"
         ></numbered-stat>
       </div>
     </section>
   </article>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 import NumberedStat from "./NumberedStat.vue";
 import GraduationCap from "./icons/GraduationCap.vue";
 import Tools from "./icons/Tools.vue";
@@ -95,7 +96,35 @@ export default defineComponent({
     Monitor,
     Flask,
   },
-  setup() {},
+  setup() {
+    const merged_prs = ref(0);
+    const loading = ref(true);
+    const pr_count = async () => {
+      let link = 'https://api.github.com/repos/JuliaLang/julia/commits?author=pchintalapudi';
+      let total = 0;
+      while (link) {
+        const resp = await window.fetch(link);
+        total += (await resp.json()).length;
+        const link_header = resp.headers.get('Link');
+        link = '';
+        if (link_header) {
+          let links = link_header.split(',');
+          for (const l of links) {
+            if (l.includes('rel="next"')) {
+              link = l.substring(1, l.indexOf(';')-1);
+            }
+          }
+        }
+      }
+      merged_prs.value = total;
+      loading.value = false;
+    };
+    pr_count();
+    return {
+      merged_prs,
+      loading
+    }
+  },
   computed: {
     internships() {
       return useStore().state.work.filter(w => w.tags.includes('internship') && !w.hidden);
@@ -161,10 +190,10 @@ export default defineComponent({
   align-items: center;
 }
 .linkable > * {
-  transition: transform 300ms;
+  transition: color 300ms;
 }
 .linkable:hover > * {
-  transform: scale(1.05);
+  color: rgb(var(--linkable-color));
 }
 .unlinkable {
   align-items: center;

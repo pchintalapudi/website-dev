@@ -33,6 +33,9 @@
             >Resume (Download)</a
           >
         </address>
+        <address class="linkedin">
+          <a href="https://linkedin.com/in/pchintalapudi">LinkedIn Profile</a>
+        </address>
       </div>
     </section>
     <section class="links">

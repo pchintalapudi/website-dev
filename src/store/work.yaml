@@ -1,8 +1,33 @@
+- id: julia2
+  company: JuliaLab
+  role: Graduate Researcher
+  start: 01-2021
+  end: null
+  tags:
+    - cs
+    - research
+  supervisors:
+    - title: Professor
+      name: Alan Edelman
+    - title: Supervisor
+      name: Valentin Churavy
+    - title: Mentor
+      name: Takafumi Arakaki
+  description: >-
+    After finishing my senior year of undergrad a semester early, I returned to JuliaLab
+    for my masters thesis on reducing Julia's compilation latency. In this project, I
+    intend to leverage several new capabilities exposed by LLVM's ORC JIT toolchain
+    for lazier and parallel compilation to reduce the real time spent in the compiler.
+    Currently, my efforts are focusing on removing a global lock that surrounds compilation
+    and improving the LLVM-based memory management subsystem to support multithreaded
+    compilation. Additionally, I am in charge of migrating Julia from LLVM's old pass
+    manager to LLVM's new pass manager, which promises more aggressive analysis caching
+    to further reduce time spent in compilation. 
 - id: nvidia2
   company: NVIDIA
   role: Computer Architecture Intern
   start: 05-2022
-  end: 05-2022
+  end: 09-2022
   tags:
     - cs
     - internship
@@ -12,7 +37,15 @@
     - title: Mentor
       name: Sameer Deshpande
   description: >-
-    TODO
+    I returned to NVIDIA for a second internship with the PerfSim team, where
+    I developed a new feature to track aggregated latency statistics on instructions
+    as they flowed through a simulated GPU. By modifying the core infrastructure
+    in small ways, I was able to provide support for tracking latency across a
+    multitude of different GPU subunits without any extra development effort
+    by the teams in charge of those subunits. Once a minimum viable product was
+    created, I incorporated feedback from potential customers in the form of
+    increased memory and cpu performance as well as a feature to log the paths
+    of high latency instructions to enable thorough latency debugging across units.
 - id: tornado
   company: Tornado
   role: Data Science Intern
@@ -25,12 +58,20 @@
     - title: Manager
       name: Hayden Cacace
   description: >-
-    TODO
+    At Tornado, I worked on optimizing a machine learning model that was erroring
+    due to lack of memory. To reduce memory usage, I leveraged more specific numpy
+    and pandas matrix operations, which preallocated matrix space instead of growing
+    sequentially. Doing so cut memory usage by more than 50% and saved significant
+    CPU time. Additionally, I moved much of the processing from Python into the SQL
+    query itself, which allowed the database processor to more efficiently retrieve
+    records and further reduced memory consumption of python objects. I then added
+    a number of new inputs to the model to improve its prediction capabilities using
+    information available in the central database. 
 - id: julia
   company: JuliaLab
   role: Undergraduate Researcher
   start: 03-2021
-  end: null
+  end: 12-2021
   tags:
     - cs
     - research
@@ -44,18 +85,17 @@
   description: >-
     Building off my past experiences in [performance engineering](#6.172) and
     outlining a [virtual machine](#vm), I worked in MIT's JuliaLab to improve
-    the Julia compiler. Over the course of a semester I extended some of the
+    the Julia compiler. Over the course of two semesters I extended some of the
     Julia-specific passes in the runtime's compiler's LLVM optimization pipeline
     to minimize allocations. Specifically, I implemented multiple optimizations,
     including adjusting the code generator to avoid emitting useless
     instructions, hoisting allocations and write barriers out of loops, and
     teaching the compiler to hoist allocations out of specific branch idioms.
-    Now, as part of my work towards a Masters degree, I work on reducing latency
-    of the Julia compiler by parallelizing the compiler and compiling code upon
-    first execution.
+    These improvements have made it onto Julia's master branch and are scheduled
+    to be available to users once Julia 1.8 is released.
 - id: nvidia
   company: NVIDIA
-  role: Architecture Intern
+  role: Computer Architecture Intern
   start: 06-2021
   end: 08-2021
   tags:
@@ -148,7 +188,6 @@
   tags:
     - cs
     - internship
-  hidden: true
   supervisors: []
 - id: broad
   company: Broad Institute of MIT and Harvard
@@ -164,7 +203,9 @@
     using supplemented keratinocyte cell media, and were stained with DAPI and
     phalloidin to both assess confluence and to validate staining on
     [PDMS](https://www.acs.org/content/acs/en/molecule-of-the-week/archive/p/polydimethylsiloxane.html)
-    microwells.
+    microwells. This project gave me experience in working with a laser cutter,
+    fabricating and baking PDMS microwell chips for experiments, and process
+    characterization.
   supervisors:
     - title: Principal Investigator
       name: Paul Blainey

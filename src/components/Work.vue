@@ -1,54 +1,29 @@
 <template>
   <article id="work">
     <b class="icon"><flask-vue :color="'yellow'"></flask-vue></b>
-    <section class="body">
-      <section class="internships">
-        <h2 class="header">Internships</h2>
-        <section class="experiences">
-          <article
-            v-for="internship in internships"
-            :key="internship.id"
-            :class="[...internship.tags, 'work']"
-            :id="internship.id"
-          >
-            <h3>{{ internship.role }}</h3>
-            <span class="metadata">
-              <h4>{{ internship.company }}</h4>
-              <i
-                >{{ dateFromString(internship.start) }} to
-                {{ dateFromString(internship.end) }}</i
-              >
-            </span>
-            <p
-              class="description"
-              v-html="markdown(internship.description)"
-            ></p>
-          </article>
-        </section>
-      </section>
-      <section class="research">
-        <h2 class="header">Research</h2>
-        <section class="experiences">
-          <article
-            v-for="experience in research"
-            :key="experience.id"
-            :class="[...experience.tags, 'work']"
-            :id="experience.id"
-          >
-            <h3>{{ experience.role }}</h3>
-            <span class="metadata">
-              <h4>{{ experience.company }}</h4>
-              <i
-                >{{ dateFromString(experience.start) }} to
-                {{ dateFromString(experience.end) }}</i
-              >
-            </span>
-            <p
-              class="description"
-              v-html="markdown(experience.description)"
-            ></p>
-          </article>
-        </section>
+    <h2 class="header">Work Experience</h2>
+    <section class="experiences">
+      <section class="experiences">
+        <article
+          v-for="exp in experiences"
+          :key="exp.id"
+          :class="[...exp.tags, 'work']"
+          :id="exp.id"
+        >
+          <h3>{{ exp.role }}</h3>
+          <span class="metadata">
+            <h4>{{ exp.company }}</h4>
+            <i v-if="exp.start != exp.end"
+              >{{ dateFromString(exp.start) }} to
+              {{ dateFromString(exp.end) }}</i
+            >
+            <i v-else>{{ dateFromString(exp.start) }}</i>
+          </span>
+          <p
+            class="description"
+            v-html="markdown(exp.description)"
+          ></p>
+        </article>
       </section>
     </section>
   </article>
@@ -64,11 +39,8 @@ export default defineComponent({
     FlaskVue,
   },
   computed: {
-    internships() {
-      return useStore().state.work.filter((w) => w.tags.includes("internship") && !w.hidden && !w.tags.includes("research"));
-    },
-    research() {
-      return useStore().state.work.filter((w) => w.tags.includes("research") && !w.hidden);
+    experiences() {
+      return useStore().state.work;
     },
   },
   methods: {
@@ -120,15 +92,11 @@ export default defineComponent({
 .icon > * {
   transform: scale(3);
 }
-.body {
-  display: grid;
-  grid-auto-flow: column;
-}
-.body > * {
-  display: contents;
-}
 .experiences {
-  display: contents;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  column-gap: 10px;
+  row-gap: 10px;
 }
 .work {
   margin: 10px;
@@ -153,12 +121,6 @@ export default defineComponent({
 .description :deep(*) {
   display: inline-block;
 }
-.internships .work, .internships .header {
-  grid-column: 1;
-}
-.research .work, .research .header {
-  grid-column: 2;
-}
 @media (max-width: 800px) {
   .icon {
     width: 100px;
@@ -166,11 +128,6 @@ export default defineComponent({
   }
   .icon > * {
     transform: scale(2.5);
-  }
-}
-@media (max-width: 600px) {
-  .research .work, .research .header {
-    grid-column: 1;
   }
 }
 </style>

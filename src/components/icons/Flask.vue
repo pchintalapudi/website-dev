@@ -34,7 +34,7 @@ export default defineComponent({
   right: 0;
   top: 0;
   transform: translateY(calc(2px - 100%));
-  width: 5px;
+  width: 6px;
   height: 10px;
   border: solid 2px var(--color);
   border-top-left-radius: 2px;
