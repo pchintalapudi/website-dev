@@ -2,11 +2,14 @@
   <article id="title">
     <section class="header">
       <img src="../assets/profile.jpg" alt="A profile picture of Prem Chintalapudi" />
-      <h1 class="text">Prem Chintalapudi</h1>
-      <p class="text">
-        Masters of Engineering student in Computer Science &
-        Engineering and Bioengineering at MIT
-      </p>
+      <article class="metadata">
+        <h1 class="text">Prem Chintalapudi</h1>
+        <h4 class="text">
+          Masters of Engineering student in Computer Science &
+          Engineering at MIT
+        </h4>
+        <p class="text">{{summary}}</p>
+      </article>
     </section>
     <section class="contact">
       <div class="row">
@@ -49,10 +52,16 @@
   </article>
 </template>
 <script lang="ts">
+import { useStore } from "@/store";
 import { defineComponent } from "vue";
 
 export default defineComponent({
   setup() {},
+  computed: {
+    summary() {
+      return useStore().state.summary;
+    }
+  }
 });
 </script>
 <style scoped>
@@ -92,6 +101,14 @@ export default defineComponent({
 }
 .header {
   flex: 1;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 20px;
+}
+.metadata {
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 #title {
   font-size: 1.25em;
@@ -100,13 +117,20 @@ export default defineComponent({
   text-align: center;
   padding: 10px;
 }
+.header .text {
+  width: 50vw;
+  min-width: 350px;
+}
+.header h4 {
+  font-weight: normal;
+}
 img {
   border-radius: 50%;
-  height: 45vmin;
-  width: 45vmin;
+  height: 62.5vmin;
+  width: 62.5vmin;
   align-self: center;
-  margin: 5vmin;
   object-fit: cover;
+  margin: 10px;
 }
 .contact {
   flex-flow: row wrap;
@@ -144,6 +168,9 @@ address > i {
 @media (max-width: 1000px) {
   address {
     font-size: 0.8em;
+  }
+  .header .text {
+    width: auto;
   }
 }
 @media (max-width: 800px) {

@@ -114,7 +114,7 @@ export default defineComponent({
   bottom: 5px;
   border-radius: 50%;
 }
-.stat:hover .arc>* {
+.number:hover .arc>* {
   background-color: rgb(var(--arc-color));
 }
 .name {

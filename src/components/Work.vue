@@ -3,28 +3,26 @@
     <b class="icon"><flask-vue :color="'yellow'"></flask-vue></b>
     <h2 class="header">Work Experience</h2>
     <section class="experiences">
-      <section class="experiences">
-        <article
-          v-for="exp in experiences"
-          :key="exp.id"
-          :class="[...exp.tags, 'work']"
-          :id="exp.id"
-        >
-          <h3>{{ exp.role }}</h3>
-          <span class="metadata">
-            <h4>{{ exp.company }}</h4>
-            <i v-if="exp.start != exp.end"
-              >{{ dateFromString(exp.start) }} to
-              {{ dateFromString(exp.end) }}</i
-            >
-            <i v-else>{{ dateFromString(exp.start) }}</i>
-          </span>
-          <p
-            class="description"
-            v-html="markdown(exp.description)"
-          ></p>
-        </article>
-      </section>
+      <article
+        v-for="exp in experiences"
+        :key="exp.id"
+        :class="[...exp.tags, 'work']"
+        :id="exp.id"
+      >
+        <h3>{{ exp.role }}</h3>
+        <span class="metadata">
+          <h4>{{ exp.company }}</h4>
+          <i v-if="exp.start != exp.end"
+            >{{ dateFromString(exp.start) }} to
+            {{ dateFromString(exp.end) }}</i
+          >
+          <i v-else>{{ dateFromString(exp.start) }}</i>
+        </span>
+        <p
+          class="description"
+          v-html="markdown(exp.description)"
+        ></p>
+      </article>
     </section>
   </article>
 </template>
@@ -99,13 +97,11 @@ export default defineComponent({
   row-gap: 10px;
 }
 .work {
-  margin: 10px;
   padding: 10px;
   transition: background-color 300ms;
   border-radius: 10px;
 }
 .work > p, .metadata {
-  font-size: 0.8em;
   padding: 10px 0;
 }
 .header {
@@ -128,6 +124,11 @@ export default defineComponent({
   }
   .icon > * {
     transform: scale(2.5);
+  }
+}
+@media (max-width: 600px) {
+  .experiences {
+    grid-template-columns: 1fr;
   }
 }
 </style>

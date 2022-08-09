@@ -9,6 +9,10 @@ module.exports = defineConfig({
         .use('yaml-loader')
           .loader('yaml-loader')
           .end()
+      .end()
+      .rule('md')
+        .test(/\.md$/)
+        .type('asset/source')
   },
   outputDir: path.resolve(__dirname, "docs"),
   assetsDir: "static"

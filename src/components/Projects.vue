@@ -108,10 +108,8 @@ export default defineComponent({
   padding: 10px;
   transition: background-color 300ms;
   border-radius: 10px;
-  flex: 1;
 }
 .project > p, .metadata {
-  font-size: 0.8em;
   padding: 10px 0;
 }
 .header {

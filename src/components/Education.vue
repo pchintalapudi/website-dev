@@ -89,7 +89,6 @@ mark {
   padding: 10px;
   justify-content: center;
   border-radius: 10px;
-  font-size: 1rem;
 }
 .cs {
   background-color: rgba(var(--red), 0.05);
