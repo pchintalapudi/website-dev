@@ -120,15 +120,15 @@ export default defineComponent({
   display: contents;
 }
 .icon {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   justify-content: center;
   align-items: center;
   position: relative;
   margin: 20px;
 }
 .icon > * {
-  transform: scale(3);
+  transform: scale(2.5);
 }
 .icon::after {
   content: "";

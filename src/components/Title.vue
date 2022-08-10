@@ -43,7 +43,7 @@
         <a href="#education" class="text green"
           ><p>Education and Coursework</p></a
         >
-        <a href="#work" class="text yellow"><p>Jobs and Internships</p></a>
+        <a href="#work" class="text yellow"><p>Work Experience</p></a>
         <a href="#projects" class="text red"><p>Personal Projects</p></a>
       </section>
     </section>
@@ -102,7 +102,7 @@ export default defineComponent({
   flex: 1;
   flex-flow: row wrap;
   justify-content: center;
-  padding: 20px;
+  padding: 10px;
 }
 .metadata {
   justify-content: center;
@@ -110,7 +110,7 @@ export default defineComponent({
   padding: 10px 40px;
 }
 #title {
-  font-size: 1.25em;
+  font-size: 1.125em;
   flex-shrink: 0;
   flex-basis: 100vh;
 }

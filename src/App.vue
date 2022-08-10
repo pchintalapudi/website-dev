@@ -101,13 +101,13 @@ head {
   display: none;
 }
 h1 {
-  font-size: 3em;
+  font-size: 2.5em;
 }
 h2 {
-  font-size: 1.75em;
+  font-size: 1.5em;
 }
 h3 {
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 h4 {
   font-size: 1.125em;
