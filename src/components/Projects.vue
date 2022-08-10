@@ -65,7 +65,6 @@ export default defineComponent({
 </script>
 <style scoped>
 #projects {
-  font-size: 1.125em;
   padding: 20px;
   align-items: center;
   padding: 20px 5vw;
@@ -101,8 +100,8 @@ export default defineComponent({
   height: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  column-gap: 10px;
-  row-gap: 10px;
+  column-gap: 40px;
+  row-gap: 40px;
 }
 .project {
   padding: 10px;
@@ -112,9 +111,12 @@ export default defineComponent({
 .project > p, .metadata {
   padding: 10px 0;
 }
+.metadata > i {
+  padding-top: 10px;
+}
 .header {
   text-align: center;
-  padding: 20px;
+  padding: 40px;
 }
 .cs:hover {
   background-color: rgba(var(--red), 0.1);

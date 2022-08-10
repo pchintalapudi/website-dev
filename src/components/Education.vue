@@ -42,8 +42,13 @@ export default defineComponent({
 #education {
   align-items: center;
   text-align: center;
-  font-size: 1.25em;
   padding: 20px 0;
+}
+h2, h3 {
+  padding: 0.5em;
+}
+h4 {
+  padding: 0.25em;
 }
 mark {
   display: inline;
@@ -89,16 +94,17 @@ mark {
   padding: 10px;
   justify-content: center;
   border-radius: 10px;
+  background-color: rgba(var(--fg-color), 0.1);
 }
-.cs {
-  background-color: rgba(var(--red), 0.05);
+/* .cs {
+  background-color: rgba(var(--red), 0.1);
 }
 .bio {
-  background-color: rgba(var(--green), 0.05);
+  background-color: rgba(var(--green), 0.1);
 }
 .cs.bio {
-  background-color: rgba(var(--yellow), 0.05);
-}
+  background-color: rgba(var(--yellow), 0.1);
+} */
 
 @media (max-width: 1000px) {
   .class.all {

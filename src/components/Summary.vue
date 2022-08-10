@@ -3,7 +3,7 @@
     <section>
       <p class="unlinkable">
         <b class="icon"><tools :color="'blue'"></tools></b>
-        <h2>Skills and Tooling</h2>
+        <h2>Skills and Expertise</h2>
       </p>
       <div class="data">
         <numbered-stat
@@ -57,26 +57,6 @@
         ></numbered-stat>
       </div>
     </section>
-    <section>
-      <a class="linkable" href="#projects" style="--linkable-color:var(--red)">
-        <b class="icon"><monitor :color="'red'"></monitor></b>
-        <h2>Productivity</h2>
-      </a>
-      <div class="data">
-        <numbered-stat
-          :name="'Personal Projects'"
-          :number="projects.length"
-          :subtext="'Long Project Lifetimes and Large Feature Sets'"
-        ></numbered-stat>
-        <p class="conjunction">and</p>
-        <numbered-stat
-          :name="'Commits to Julia'"
-          :number="merged_prs"
-          :subtext="'Number of commits on Julia master branch'"
-          :loading="loading"
-        ></numbered-stat>
-      </div>
-    </section>
   </article>
 </template>
 <script lang="ts">
@@ -96,35 +76,7 @@ export default defineComponent({
     Monitor,
     Flask,
   },
-  setup() {
-    const merged_prs = ref(0);
-    const loading = ref(true);
-    const pr_count = async () => {
-      let link = 'https://api.github.com/repos/JuliaLang/julia/commits?author=pchintalapudi';
-      let total = 0;
-      while (link) {
-        const resp = await window.fetch(link);
-        total += (await resp.json()).length;
-        const link_header = resp.headers.get('Link');
-        link = '';
-        if (link_header) {
-          let links = link_header.split(',');
-          for (const l of links) {
-            if (l.includes('rel="next"')) {
-              link = l.substring(1, l.indexOf(';')-1);
-            }
-          }
-        }
-      }
-      merged_prs.value = total;
-      loading.value = false;
-    };
-    pr_count();
-    return {
-      merged_prs,
-      loading
-    }
-  },
+  setup() {},
   computed: {
     internships() {
       return useStore().state.work.filter(w => w.tags.includes('internship') && !w.hidden);
@@ -151,10 +103,12 @@ export default defineComponent({
 #summary {
   justify-content: space-evenly;
   padding: 20px;
-  font-size: 1.25em;
+  font-size: 1.0625em;
   display: grid;
   grid-template-rows: auto 1fr 1fr;
+  column-gap: 30px;
   grid-auto-flow: column;
+  min-height: 100vh;
 }
 #summary > * {
   flex: 1;
@@ -166,15 +120,15 @@ export default defineComponent({
   display: contents;
 }
 .icon {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   justify-content: center;
   align-items: center;
   position: relative;
   margin: 20px;
 }
 .icon > * {
-  transform: scale(2.5);
+  transform: scale(3);
 }
 .icon::after {
   content: "";

@@ -58,13 +58,12 @@ export default defineComponent({
 <style scoped>
 .number {
   border-radius: 50%;
-  font-size: 4em;
+  font-size: 2.75em;
   width: 2em;
   height: 2em;
   justify-content: center;
   align-items: center;
   color: rgb(var(--fg-color));
-  font-weight: normal;
   margin: 20px;
   transition: color 300ms;
   position: relative;
@@ -108,10 +107,11 @@ export default defineComponent({
 .final {
   background-color: rgb(var(--bg-color));
   position: absolute;
-  top: 5px;
-  left: 5px;
-  right: 5px;
-  bottom: 5px;
+  --radius: 2px;
+  top: var(--radius);
+  left: var(--radius);
+  right: var(--radius);
+  bottom: var(--radius);
   border-radius: 50%;
 }
 .number:hover .arc>* {

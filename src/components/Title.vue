@@ -5,14 +5,14 @@
       <article class="metadata">
         <h1 class="text">Prem Chintalapudi</h1>
         <h4 class="text">
-          Masters of Engineering student in Computer Science &
+          Masters of Engineering Candidate in Computer Science &
           Engineering at MIT
         </h4>
-        <p class="text">{{summary}}</p>
+        <p class="text" v-html="summary"></p>
       </article>
     </section>
-    <section class="contact">
-      <div class="row">
+    <section class="grid">
+      <section class="contact">
         <address class="email">
           <p>premc</p>
           <i aria-hidden="true">@SLDKFSON@@~!!~!@#$%^&*()</i>
@@ -27,11 +27,9 @@
           <i aria-hidden="true">@SLDKFSON@@~!!~!@#$%^&*(875)456-213</i>
           <p>1580</p>
         </address>
-      </div>
-      <div class="row">
         <address class="resume">
           <a
-            href="https://github.com/pchintalapudi/pchintalapudi.github.io/raw/master/src/assets/Prem_Chintalapudi_Resume.pdf"
+            href="https://github.com/pchintalapudi/pchintalapudi.github.io/raw/master/src/assets/Prem_Chintalapudi_Resume.docx"
             download=""
             >Resume (Download)</a
           >
@@ -39,36 +37,36 @@
         <address class="linkedin">
           <a href="https://linkedin.com/in/pchintalapudi">LinkedIn Profile</a>
         </address>
-      </div>
-    </section>
-    <section class="links">
-      <a href="#summary" class="text blue"><p>Quick Summary</p></a>
-      <a href="#education" class="text green"
-        ><p>Education and Coursework</p></a
-      >
-      <a href="#work" class="text yellow"><p>Jobs and Internships</p></a>
-      <a href="#projects" class="text red"><p>Personal Projects</p></a>
+      </section>
+      <section class="links">
+        <a href="#summary" class="text blue"><p>Quick Summary</p></a>
+        <a href="#education" class="text green"
+          ><p>Education and Coursework</p></a
+        >
+        <a href="#work" class="text yellow"><p>Jobs and Internships</p></a>
+        <a href="#projects" class="text red"><p>Personal Projects</p></a>
+      </section>
     </section>
   </article>
 </template>
 <script lang="ts">
 import { useStore } from "@/store";
 import { defineComponent } from "vue";
+import { marked } from "marked";
 
 export default defineComponent({
   setup() {},
   computed: {
     summary() {
-      return useStore().state.summary;
+      return marked(useStore().state.summary);
     }
   }
 });
 </script>
 <style scoped>
 .links {
-  flex-flow: row wrap;
+  display: contents;
   justify-content: center;
-  background-color: rgba(var(--fg-color), 0.1);
   transition: background-color 300ms;
 }
 .links > .text {
@@ -76,9 +74,10 @@ export default defineComponent({
   align-items: center;
   flex: 1;
   font-weight: bold;
-  transition: background-color 150ms, color 150ms;
+  transition: background-color 150ms, color 150ms, opacity 150ms;
   color: rgb(var(--color));
   padding-bottom: 30px;
+  background-color: rgba(var(--fg-color), 0.1);
 }
 .links > :hover {
   background-color: rgba(var(--fg-color), 0.1);
@@ -108,10 +107,12 @@ export default defineComponent({
 .metadata {
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 10px 40px;
 }
 #title {
   font-size: 1.25em;
+  flex-shrink: 0;
+  flex-basis: 100vh;
 }
 .text {
   text-align: center;
@@ -122,21 +123,28 @@ export default defineComponent({
   min-width: 350px;
 }
 .header h4 {
-  font-weight: normal;
+  margin: 0.5em 0;
+}
+.header p {
+  text-align: left;
+  line-height: 1.5em;
+}
+.header p :deep(*) {
+  display: inline;
 }
 img {
   border-radius: 50%;
-  height: 62.5vmin;
-  width: 62.5vmin;
+  height: 45vmin;
+  width: 45vmin;
   align-self: center;
   object-fit: cover;
   margin: 10px;
 }
 .contact {
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  flex: 1;
+  display: contents;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.125em;
 }
 .row {
   display: contents;
@@ -160,10 +168,10 @@ address > i {
   content: "-";
   display: inline;
 }
-@media (min-width: 1000px) {
-  #title {
-    min-height: 100vh;
-  }
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 2em;
 }
 @media (max-width: 1000px) {
   address {
@@ -179,6 +187,12 @@ address > i {
   }
   #title {
     font-size: 1em;
+  }
+}
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 0;
   }
 }
 </style>

@@ -30,7 +30,7 @@ export default defineComponent({
   position: absolute;
   content: "";
   margin: auto;
-  left: 0;
+  left: -0.5px;
   right: 0;
   top: 0;
   transform: translateY(calc(2px - 100%));

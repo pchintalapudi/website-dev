@@ -9,9 +9,9 @@
         :class="[...exp.tags, 'work']"
         :id="exp.id"
       >
-        <h3>{{ exp.role }}</h3>
+        <h3>{{ exp.company }}</h3>
         <span class="metadata">
-          <h4>{{ exp.company }}</h4>
+          <h4>{{ exp.role }}</h4>
           <i v-if="exp.start != exp.end"
             >{{ dateFromString(exp.start) }} to
             {{ dateFromString(exp.end) }}</i
@@ -64,7 +64,6 @@ export default defineComponent({
 </script>
 <style scoped>
 #work {
-  font-size: 1.125em;
   padding: 20px;
   align-items: center;
   padding: 20px 5vw;
@@ -93,8 +92,8 @@ export default defineComponent({
 .experiences {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  column-gap: 10px;
-  row-gap: 10px;
+  column-gap: 40px;
+  row-gap: 40px;
 }
 .work {
   padding: 10px;
@@ -104,15 +103,12 @@ export default defineComponent({
 .work > p, .metadata {
   padding: 10px 0;
 }
+.metadata > i {
+  padding-top: 10px;
+}
 .header {
   text-align: center;
-  padding: 20px;
-}
-.cs:hover {
-  background-color: rgba(var(--red), 0.1);
-}
-.bio:hover {
-  background-color: rgba(var(--green), 0.1);
+  padding: 40px;
 }
 .description :deep(*) {
   display: inline-block;

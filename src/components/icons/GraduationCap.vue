@@ -28,7 +28,7 @@ export default defineComponent({
   border-right-color: transparent;
   border-bottom-left-radius: 5px 2px;
   transition: border-color 300ms;
-  transform: translate(10px, 19px);
+  transform: translate(11px, 19px);
 }
 .base::after {
   position: absolute;
@@ -45,7 +45,7 @@ export default defineComponent({
   border-left-color: transparent;
   border-bottom-right-radius: 5px 2px;
   transition: border-color 300ms;
-  transform: translate(-17px, -3.5px);
+  transform: translate(-18px, -4px);
 }
 .graduation-cap::after {
   position: absolute;
