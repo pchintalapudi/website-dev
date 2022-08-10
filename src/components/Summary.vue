@@ -108,7 +108,7 @@ export default defineComponent({
   grid-template-rows: auto 1fr 1fr;
   column-gap: 30px;
   grid-auto-flow: column;
-  min-height: 100vh;
+  flex-basis: 100vh;
 }
 #summary > * {
   flex: 1;
